@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
 
     if params[:ratings] == nil && params[:sort_by] == nil #back button
       @ratings_to_show = session[:ratings] || @all_ratings
-      @sort_by = session[:sort_by] || "titles"
+      @sort_by = session[:sort_by] || "title"
     else #visiting page normally
       if params[:ratings].present?
         @ratings_to_show = params[:ratings].keys
