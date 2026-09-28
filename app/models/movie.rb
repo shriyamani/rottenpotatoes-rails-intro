@@ -15,4 +15,13 @@ class Movie < ApplicationRecord
     
     return Movie.where('LOWER(rating) IN (?)', lowercase_ratings)
   end
+
+  def self.sort_list(category)
+    if category == "release_date"
+      return order(:release_date)
+    else
+      return order(:title)
+    end
+  end
+
 end
